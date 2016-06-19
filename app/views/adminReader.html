@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h3 class="modal-title">Nuevo {{options.toString}}</h3>
+</div>
+<div style="margin-top:20px" class="modal-body">
+  <form ng-init="entity.basename = 'Reader'">
+    <fieldset class="form-group" style="width:40%; float:left; margin-right:30px">
+      <label for="title">Nº de referencia</label>
+      <input type="text" class="form-control" id="title" ng-model="entity.recordNumber" >
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="subtitle">NIF</label>
+      <input type="text" class="form-control" id="subtitle" ng-model="entity.nif" >
+    </fieldset>
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:30px">
+      <label for="refNumber">Nombre</label>
+      <input type="text" class="form-control" id="refNumber" ng-model="entity.firstName" >
+    </fieldset>
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:30px">
+      <label for="editionYear">Apellidos</label>
+      <input type="text" class="form-control" id="editionYear" ng-model="entity.lastName" >
+    </fieldset>
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:30px">
+      <label for="isbn">Email</label>
+      <input type="email" class="form-control" id="isbn" ng-model="entity.email" >
+    </fieldset>
+    <fieldset class="form-group" style="width:29%; float:left;">
+      <label for="legalDeposit">Teléfono</label>
+      <input type="text" class="form-control" id="legalDeposit" ng-model="entity.phone" >
+    </fieldset>
+    <fieldset ng-if="!entity.id" class="form-group" style="width:40%; float:left; margin-right:30px">
+      <label for="publisher">Usuario</label>
+      <input type="text" class="form-control" id="publisher" ng-model="entity.username" >
+    </fieldset>
+
+    <fieldset ng-if="!entity.id" class="form-group" style="width:70%; float:left; margin-right:30px">
+      <label for="location">Contraseña</label>
+      <input type="password" class="form-control" id="location" ng-model="entity.password" >
+    </fieldset>
+
+  </form>
+</div>
+<div style="clear:both" class="modal-footer">
+      <button ng-if="entity.id" class="btn btn-primary" type="button" ng-click="editItem(entity)">OK</button>
+      <button ng-if="!entity.id" class="btn btn-primary" type="button" ng-click="addItem(entity)">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+</div>

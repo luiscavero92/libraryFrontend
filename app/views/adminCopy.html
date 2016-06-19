@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <h3 class="modal-title">Nuevo {{options.toString}}</h3>
+</div>
+<div style="margin-top:20px" class="modal-body">
+  <form ng-init="entity.basename = 'Copy'">
+    <fieldset class="form-group" style="width:40%; float:left; margin-right:30px">
+      <label for="title">Número de copia</label>
+      <input type="text" class="form-control" id="title" ng-model="entity.copyNumber" >
+    </fieldset>
+
+    <fieldset class="form-group" style="width:50%; float:left; margin-right:30px">
+      <label for="cdu">Artículo</label>
+      <input type="text" class="form-control" id="cdu" ng-model="searchEntity.search" placeholder="Búsqueda por título">
+
+      <select id="category" style="width:100%" ng-model="entity.article" ng-options="article.title for article in options.articles | filter:searchEntity track by article.id">
+      </select>
+    </fieldset>
+
+
+    <fieldset class="form-group" style="width:25%; float:left; margin-right:50px; padding-left:40px;">
+      <label for="loanable">Dañado</label><br>
+      <input type="checkbox" style="width:25px; height:25px;margin-left:20px;margin-top:5px" id="damaged" ng-model="entity.damaged">
+    </fieldset>
+
+    <fieldset class="form-group" style="width:25%; float:left; margin-right:50px; padding-left:40px;">
+      <label for="loanable">Perdido</label><br>
+      <input type="checkbox" style="width:25px; height:25px;margin-left:20px;margin-top:5px" id="loanable" ng-model="entity.lost">
+    </fieldset>
+
+
+    <fieldset ng-init="entity.available = entity.id ? entity.available : true"class="form-group" style="width:25%; float:left; margin-right:50px; padding-left:40px;">
+      <label for="loanable">Disponible</label><br>
+      <input type="checkbox" style="width:25px; height:25px;margin-left:20px;margin-top:5px" id="loanable" ng-model="entity.available">
+    </fieldset>
+
+    <fieldset class="form-group" style=" float:left; width:100%">
+      <label for="note">Nota</label>
+      <textarea class="form-control" id="note" ng-model="entity.note" rows="5"></textarea>
+    </fieldset>
+
+
+  </form>
+</div>
+<div style="clear:both" class="modal-footer">
+      <button ng-if="entity.id" class="btn btn-primary" type="button" ng-click="editItem(entity)">OK</button>
+      <button ng-if="!entity.id" class="btn btn-primary" type="button" ng-click="addItem(entity)">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+</div>

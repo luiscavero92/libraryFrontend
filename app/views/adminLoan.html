@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h3 class="modal-title">Nuevo {{options.toString}}</h3>
+</div>
+<div style="margin-top:20px" class="modal-body">
+  <form ng-init="entity.basename = 'Loan'">
+
+
+    <fieldset class="form-group" style="width:50%; float:left; margin-right:30px">
+      <label for="cdu">Lector</label>
+      <input type="text" class="form-control" id="cdu" ng-model="searchEntity.search" placeholder="Búsqueda por nombre">
+
+      <select id="category" style="width:100%" ng-model="entity.reader" ng-options="reader.firstName + ' | ' + reader.lastName for reader in options.readers | filter:searchEntity track by reader.id">
+      </select>
+    </fieldset>
+
+    <fieldset class="form-group" style="width:50%; float:left; margin-right:30px">
+      <label for="cdu">Ejemplar</label>
+      <input type="text" class="form-control" id="cdu" ng-model="searchCopy.search" placeholder="Búsqueda por título">
+
+      <select id="category" style="width:100%" ng-model="entity.copy" ng-options="copy.article.title for copy in options.copies | filter:searchCopy track by copy.id">
+      </select>
+    </fieldset>
+
+  </form>
+</div>
+<div style="clear:both" class="modal-footer">
+      <button ng-if="entity.id" class="btn btn-primary" type="button" ng-click="editItem(entity)">OK</button>
+      <button ng-if="!entity.id" class="btn btn-primary" type="button" ng-click="addItem(entity)">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+</div>

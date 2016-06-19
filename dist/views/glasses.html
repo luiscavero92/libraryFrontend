@@ -1,0 +1,35 @@
+<div class="col-md-12 body-container">
+		<div>
+			<h1>Glass List</h1>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead class="thead-inverse">
+						<tr>
+							<th>#</th>
+							<th>Glass</th>
+							<th>Name</th>
+							<th>Build</th>
+							<th>Color</th>
+							<th>Company</th>
+							<th class="text-center"><i class="material-icons">&#xE86A;</i></th>
+							<th class="text-center"><i class="material-icons">&#xE872;</i></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="glass in glasses">
+							<th scope="row">{{ glass.id }}</th>
+							<td>{{ glass.glass }}</td>
+							<td>{{ glass.name }}</td>
+							<td>{{ glass.build }}</td>
+							<td>{{ glass.color }}</td>
+							<td>{{ glass.company }}</td>
+							<td class="text-center"><button type="button" class="btn btn-warning">Edit</button></td>
+							<td class="text-center"><button type="button" class="btn btn-danger">Delete</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<button type="button" class="btn btn-success">Create new Device</button>
+		</div>
+	</div>

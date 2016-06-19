@@ -1,0 +1,75 @@
+<div class="modal-header">
+    <h3 class="modal-title">Nuevo {{options.toString}}</h3>
+</div>
+<div style="margin-top:20px" class="modal-body">
+  <form ng-init="entity.basename = 'Article'">
+    <fieldset class="form-group" style="width:40%; float:left; margin-right:30px">
+      <label for="title">Título</label>
+      <input type="text" class="form-control" id="title" ng-model="entity.title" >
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="subtitle">Subtítulo</label>
+      <input type="text" class="form-control" id="subtitle" ng-model="entity.subtitle" >
+    </fieldset>
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:30px">
+      <label for="refNumber">Número de referencia</label>
+      <input type="text" class="form-control" id="refNumber" ng-model="entity.refNumber" >
+    </fieldset>
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:30px">
+      <label for="editionYear">Año de edición</label>
+      <input type="number" class="form-control" id="editionYear" ng-model="entity.editionYear" max="3000" >
+    </fieldset>
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:30px">
+      <label for="isbn">ISBN</label>
+      <input type="text" class="form-control" id="isbn" ng-model="entity.isbn" >
+    </fieldset>
+    <fieldset class="form-group" style="width:29%; float:left;">
+      <label for="legalDeposit">Depósito Legal</label>
+      <input type="text" class="form-control" id="legalDeposit" ng-model="entity.legalDeposit" >
+    </fieldset>
+    <fieldset class="form-group" style="width:40%; float:left; margin-right:30px">
+      <label for="publisher">Editorial</label>
+      <input type="text" class="form-control" id="publisher" ng-model="entity.publisher" >
+    </fieldset>
+
+    <fieldset class="form-group" style="width:50%; float:left; margin-right:30px">
+      <label for="cdu">CDU</label>
+      <input type="text" class="form-control" id="cdu" ng-model="searchEntity.search" placeholder="Búsqueda por código o descripción">
+
+      <select id="category" style="width:100%" ng-model="entity.cdu" ng-options="cdu.code + ' | ' + cdu.description for cdu in options.cdus | filter:searchEntity track by cdu.id">
+      </select>
+    </fieldset>
+
+
+    <fieldset class="form-group" style="width:70%; float:left; margin-right:30px">
+      <label for="location">Localización</label>
+      <input type="text" class="form-control" id="location" ng-model="entity.location" >
+    </fieldset>
+
+    <fieldset class="form-group" style="width:20%; float:left; margin-right:50px; padding-left:40px;">
+      <label for="loanable">Prestable</label><br>
+      <input type="checkbox" style="width:25px; height:25px;margin-left:20px;margin-top:5px" id="loanable" ng-model="entity.loanable">
+
+    </fieldset>
+    <fieldset class="form-group" style="width:40%; float:left; margin-right:30px">
+      <label for="category">Categoría</label>
+      <select id="category" style="width:80%" ng-model="entity.category" ng-options="category.description for category in options.categories track by category.id">
+      </select>
+    </fieldset>
+
+
+    <fieldset class="form-group" style=" float:left; width:55%">
+      <label for="note">Nota</label>
+
+      <textarea class="form-control" id="note" ng-model="entity.note" rows="5"></textarea>
+    </fieldset>
+
+
+
+  </form>
+</div>
+<div style="clear:both" class="modal-footer">
+      <button ng-if="entity.id" class="btn btn-primary" type="button" ng-click="editItem(entity)">OK</button>
+      <button ng-if="!entity.id" class="btn btn-primary" type="button" ng-click="addItem(entity)">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+</div>

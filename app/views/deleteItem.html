@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h3 class="modal-title">Eliminar {{options.toString}}</h3>
+</div>
+<div style="margin-top:20px" class="modal-body text-center">
+  <p>¿Está seguro de que quiere eliminar este {{options.toString}}?</p>
+  {{ entity.title }}
+</div>
+<div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="removeItem(entity)">OK</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancelar</button>
+</div>

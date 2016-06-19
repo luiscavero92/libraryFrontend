@@ -1,0 +1,40 @@
+<div class="modal-header text-center">
+    <h3 class="modal-title">{{ entity.article.title }}</h3>
+    <h4 style="color:gray">{{entity.article.subtitle}}</h4>
+</div>
+<div style="margin-top:20px" class="modal-body ">
+  <div style="width:600px; float:left;margin-right:30px">
+    <div style="width:50%" class="visualField">
+      <h4>Nº de copia</h4>
+      {{ entity.copyNumber}}
+    </div>
+    <div style="width:40%" class="visualField">
+      <h4>Añadido en</h4>
+      {{ entity.addedOn}}
+    </div>
+    <div style="width:30%" class="visualField">
+      <h4>Dañado</h4>
+      {{ entity.damaged ? 'Si' : 'No'}}
+    </div>
+    <div style="width:30%" class="visualField">
+      <h4>Disponible</h4>
+      {{ entity.available ? 'Si' : 'No'}}
+    </div>
+
+    <div style="width:30%" class="visualField">
+      <h4>Perdido</h4>
+      {{entity.lost ? 'Si' : 'No'}}
+    </div>
+    <div style="width:100%" class="visualField">
+      <h4>Nota</h4>
+      {{entity.note}}
+    </div>
+  </div>
+  <div style="float:left">
+    <img src="/img/notfound.png" width="200px"/>
+  </div>
+
+<div style="clear:both">
+
+</div>
+</div>

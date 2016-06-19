@@ -1,0 +1,54 @@
+<div class="modal-header text-center">
+    <h3 class="modal-title">{{ entity.title }}</h3>
+    <h4 style="color:gray">{{entity.subtitle}}</h4>
+</div>
+<div style="margin-top:20px" class="modal-body ">
+  <div style="width:600px; float:left;margin-right:30px">
+    <div style="width:30%" class="visualField">
+      <h4>Nº de referencia</h4>
+      {{ entity.refNumber}}
+    </div>
+    <div style="width:30%" class="visualField">
+      <h4>Depósito Legal</h4>
+      {{ entity.legalDeposit}}
+    </div>
+    <div style="width:30%" class="visualField">
+      <h4>Localización</h4>
+      {{ entity.location}}
+    </div>
+    <div style="width:100%" class="visualField">
+      <h4>CDU</h4>
+      {{ entity.cdu.code + ' ' + entity.cdu.description}}
+    </div>
+
+    <div style="width:30%" class="visualField">
+      <h4>Categoría</h4>
+      {{entity.category.description}}
+    </div>
+    <div style="width:30%" class="visualField">
+      <h4>Prestable</h4>
+      {{entity.loanable ? 'Si' : 'No'}}
+    </div>
+    <div style="width:30%" class="visualField">
+      <h4>Autores</h4>
+      <span ng-repeat="author in entity.authors">
+        {{ '- ' + author }} <br>
+      </span>
+    </div>
+    <div style="width:100%" class="visualField">
+      <h4>Editorial</h4>
+      {{entity.publisher}}
+    </div>
+    <div style="width:100%" class="visualField">
+      <h4>Nota</h4>
+      {{entity.note}}
+    </div>
+  </div>
+  <div style="float:left">
+    <img src="/img/libro.jpg" width="200px"/>
+  </div>
+
+<div style="clear:both">
+
+</div>
+</div>

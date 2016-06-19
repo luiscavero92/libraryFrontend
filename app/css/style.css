@@ -1,0 +1,64 @@
+.text-center{
+	text-align: center;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.body-container{
+	padding-top: 30px;
+}
+
+.body-container h1{
+	margin-bottom: 40px;
+	margin-left: 15px;
+}
+
+.material-icons{
+	display: block !important;
+}
+
+.textselected{
+	color: white !important;
+}
+
+.field{
+	display: inline-block;
+}
+
+.nav-link{
+	cursor: pointer;
+}
+
+.logout{
+	color: orange !important;
+}
+
+.logout:hover{
+	color: white !important;
+}
+
+.removebutton, .editbutton{
+	visibility: hidden !important;
+	cursor: pointer;
+}
+
+tr:hover .removebutton, tr:hover .editbutton{
+	visibility: visible !important;
+}
+
+td:hover .removebutton{
+	visibility: visible !important;
+	color: red;
+}
+
+td:hover .editbutton{
+	visibility: visible !important;
+	color: orange;
+}
+
+.visualField{
+	float: left;
+	margin: 0px 20px 30px 0px;
+}

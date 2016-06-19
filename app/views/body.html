@@ -1,0 +1,33 @@
+<div class="col-md-12 body-container" >
+  <div>
+    <h1>{{ title }}</h1>
+        <button ng-if="login == 'admin'" type="button" ng-click="add()" class="btn btn-success">Crear nuevo {{ toString }}</button>
+        <label style="margin: 0px 10px 0px 40px; font-weight:bold;">Búsqueda por {{searchString}}:</label><input ng-model="searchEntity.search"><br><br>
+    <div class="table-responsive">
+
+      <table class="table table-striped table-hover" style="margin-right:0px !important; padding:0px !important">
+        <thead class="thead-inverse">
+          <tr>
+            <th class="field" ng-repeat="field in fields" style="width: {{field.width}} !important;text-align: {{field.align}};" >{{ field.title }}</th>
+            <th class="field" style="width:40px;float:right;min-height:51px"></th>
+            <th class="field" style="width:40px;float:right;min-height:51px"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr dir-paginate="entity in entityList | filter:searchEntity | itemsPerPage: 8" style="cursor:pointer">
+
+            <td class="field" ng-repeat="field in fields" ng-click="showDetails(entity)" style="width: {{field.width}};text-align: {{field.align}};" >{{ getDescendantProp(entity, field.field) }}</td>
+            <td ng-if="login == 'admin'" class="field" style="width: 40px; float:right;cursor:pointer" ng-click="remove(entity)"><span class="removebutton">✖</span></td>
+            <td ng-if="login == 'admin'" class="field" style="width: 40px; float:right;cursor:pointer" ng-click="edit(entity)"><span class="editbutton">✎</span></td>
+
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <dir-pagination-controls></dir-pagination-controls>
+      </div>
+
+    </div>
+
+  </div>
+</div>

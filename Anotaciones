@@ -1,0 +1,13 @@
+Instalación
+
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+
+Npm es un gestor de paquetes que incluye un servidor NodeJs
+Angular utiliza un servidor node para:
+	- Crear documentación ?
+	- Desplegar un servidor de desarrollo
+	- Ejecutar tests
+	- Generar archivos distribuibles
